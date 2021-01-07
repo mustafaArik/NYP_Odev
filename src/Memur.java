@@ -24,8 +24,8 @@ public class Memur extends Calisan{
 		
 		System.out.println("\n#######################_____     Memur Bilgileri     _____#########################");
 		System.out.println("###################################################################################");
-		System.out.println(calistigiBirim+" "+super.getIsim() + " " + super.getSoyisim() );
-		System.out.println("Sicil No:"+super.getSicilNo()+"\t\t\tDerece:"+super.getDerece());
+		System.out.println(super.getIsim() + " " + super.getSoyisim() );
+		System.out.println("Sicil No:"+super.getSicilNo()+"\t\t\tDerece:"+super.getDerece() + "\t\tÇalýþtýðý Birim:" + calistigiBirim);
 		System.out.println("D.Tarihi: " + dateFormat.format(super.getDogumTarihi()) + " \t\tTC Kimlik: " + super.getTcno()+ "\t\tCinsiyet: " + super.getCinsiyet());
 		System.out.println("Telefon: " + super.getTelno()+ "\t\tEposta: " + getEmail());
 		System.out.println("###################################################################################\n");		
