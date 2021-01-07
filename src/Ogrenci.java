@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 public class Ogrenci extends Kisi {
 	private Integer ogrenciNo;
 	private Integer mezuniyetKredisi;
-	ArrayList<Ders> aldigiDersler = new ArrayList<Ders>();
+	ArrayList<Ders> aldigiDersler = new ArrayList<Ders>();	// HAS-A İlişkisi (Ders Sınıfı - Öğrenci Sınıfı)
 	
 	Ogrenci(int ogrno, int kredi , ArrayList<Ders> dersler){
 		//OgrenciNO Integer , Kredi Integer
@@ -67,13 +67,13 @@ public class Ogrenci extends Kisi {
 	public void Kimlik_Bilgisi_Yazdir() {
 		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");		
 		
-//		System.out.println("###########################################################################################");
 		System.out.println("\n################################     Öğrenci Bilgileri     ################################");
 		System.out.println("###########################################################################################");
-		System.out.println(super.getIsim() + " " + super.getSoyisim() + "\t\tD.Tarihi: " + dateFormat.format(super.getDogumTarihi()) + " \t\tTC Kimlik: " + super.getTcno());
-		System.out.println("Cinsiyet: "+super.getCinsiyet() + "\t\tTelefon: " + super.getTelno()+ "\t\tEposta: " + getEmail());
-		System.out.println("###########################################################################################\n");
-		//		System.out.println("-----------------------------------------------------------------Kişi Bilgileri Bitti");		
+		System.out.println(super.getIsim() + " " + super.getSoyisim());
+		System.out.println("D.Tarihi: " + dateFormat.format(super.getDogumTarihi()) + " \t\tTC Kimlik: " + super.getTcno() + "\t\tCinsiyet: "+super.getCinsiyet());
+		System.out.println("Telefon: " + super.getTelno()+ "\t\tEposta: " + getEmail());
+		System.out.println("###########################################################################################\n");	 
+		
 	}
 
 }

@@ -8,6 +8,13 @@ public abstract class Calisan extends Kisi{
 		
 		return maas;
 	}
+	Calisan(){
+		
+	}
+	Calisan(int sicilNo, int derece){
+		this.sicilNo = sicilNo;
+		this.derece = derece;
+	}
 
 	public Integer getSicilNo() {
 		return sicilNo;
