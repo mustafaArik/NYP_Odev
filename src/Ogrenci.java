@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;  
+
 
 public class Ogrenci extends Kisi {
 	private Integer ogrenciNo;
@@ -49,21 +52,28 @@ public class Ogrenci extends Kisi {
 	
 	public void dersleriListele() {
 		int toplamKredi = 0;
-		System.out.println(ogrenciNo + " Numaralı Öğrencinin ALDIĞI Dersler \t\t" + super.getIsim()+" "+super.getSoyisim());
+		
+		System.out.println("\n"+ogrenciNo + " Numaralı Öğrencinin ALDIĞI Dersler \t\t" + super.getIsim()+" "+super.getSoyisim());
 		System.out.println("_______________________________________________________________________");
 		for (Ders ders : aldigiDersler) {
 			System.out.println("Ders Adı: "+ders.getAd() + "\t\t\tKredi :"+ders.getKredi());
 			toplamKredi = toplamKredi + ders.getKredi();
 		}
 
-		System.out.println("-------------------------------------------------------Toplam Kredi: "+toplamKredi+"");
+		System.out.println("-------------------------------------------------------Toplam Kredi: "+toplamKredi+"\n");
 	}
 
 	@Override
 	public void Kimlik_Bilgisi_Yazdir() {
-		System.out.println(super.getIsim() + " " + super.getSoyisim() + "\t D.Tarihi: " + super.getDogumTarihi() + " \t TC Kimlik: " + super.getTcno());
-		System.out.println(super.getCinsiyet() + " " + super.getTelno()+ " " + getEmail());
-		System.out.println("-----------------------------------------------------------------Kişi Bilgileri Bitti");		
+		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");		
+		
+//		System.out.println("###########################################################################################");
+		System.out.println("\n################################     Öğrenci Bilgileri     ################################");
+		System.out.println("###########################################################################################");
+		System.out.println(super.getIsim() + " " + super.getSoyisim() + "\t\tD.Tarihi: " + dateFormat.format(super.getDogumTarihi()) + " \t\tTC Kimlik: " + super.getTcno());
+		System.out.println("Cinsiyet: "+super.getCinsiyet() + "\t\tTelefon: " + super.getTelno()+ "\t\tEposta: " + getEmail());
+		System.out.println("###########################################################################################\n");
+		//		System.out.println("-----------------------------------------------------------------Kişi Bilgileri Bitti");		
 	}
 
 }
