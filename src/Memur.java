@@ -31,4 +31,11 @@ public class Memur extends Calisan{
 		System.out.println("###################################################################################\n");		
 	}
 	
+	@Override
+	public Integer Maas_Hesapla() {
+		Integer maas = 3500;
+		
+		return maas;
+	}
+	
 }

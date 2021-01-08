@@ -4,7 +4,7 @@ public abstract class Calisan extends Kisi{
 	private Integer derece;
 	
 	public Integer Maas_Hesapla() {
-		Integer maas = null;
+		Integer maas = 0;
 		
 		return maas;
 	}

@@ -76,17 +76,16 @@ public class Main {
 		
 		
 		
-		
-		
-		
-		
+
 		
 //		ogrenci1.dersleriListele();			// Öðrenciye atanmýþ dersler listeleniyor.
 		ogrenci1.Kimlik_Bilgisi_Yazdir();
+		System.out.println(ogrenci1.getOgrenciNo() + " Öðrencisinin Mezuniyet Durumu : [ "+ ogrenci1.Mezuniyet_Durumu()+ " ]");
 			
 //		ogretimGorevlisi1Dersler.add(yaz16203);
 		ogretimGorevlisi1.dersleriListele();	// Hoca'nýn girdiði dersler.
 		ogretimGorevlisi1.Kimlik_Bilgisi_Yazdir();
+		System.out.println(""+ogretimGorevlisi1.Maas_Hesapla());
 
 		memur1.Kimlik_Bilgisi_Yazdir();
 

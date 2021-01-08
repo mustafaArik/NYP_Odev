@@ -50,4 +50,37 @@ public class Ogretim_Gorevlisi extends Calisan{
 		
 	}
 	
+	@Override
+	public Integer Maas_Hesapla() {
+		Integer maas = 3500;
+		//Temel Maaþ Ücreti
+		
+		try {
+			// Unvan'a göre Temel Maaþ deðiþtirilsin.
+			if(this.unvan=="Prof. Dr.")
+				 maas = 5000;
+			else if(this.unvan=="Doc.Dr")
+				maas = 4500;
+			else if(this.unvan=="Dr Öðr. Üyesi")
+				maas = 4250;
+			else if(this.unvan=="Öðretim Gör.")
+				maas = 4000;
+			// Sadece else bölümü yok, çünkü en baþta deðiþkene varsayýlan deðer atandý.
+		
+			int toplamKredi = 0;
+			for (Ders ders : verdigiDersler) {
+				toplamKredi = toplamKredi + ders.getKredi();
+			}
+			
+			
+			maas = maas + (toplamKredi * 250);	// Ekdersli maaþ ücreti
+			
+		}
+		catch (Exception e) {
+			System.out.println("Maaþ Hesaplanýrken bir hata oluþtu");
+		}
+		
+		return maas;
+	}
+	
 }

@@ -20,7 +20,25 @@ public class Ogrenci extends Kisi {
 	
 	
 	public String Mezuniyet_Durumu() {
-		String durum = null;
+		String durum = "Mezun DEĞİL";
+		int toplamKredi = 0;
+		
+		try {
+		
+			for (Ders ders : aldigiDersler) {
+				toplamKredi = toplamKredi + ders.getKredi();
+			}
+			
+			if(toplamKredi>25) {
+				durum = "Mezun";
+			}
+		
+		}
+		catch (Exception e) {
+			System.out.println("Mezuniyet durumu hesaplanırken bir hata oluştu.");
+		}
+		
+		
 		return durum;		
 	}
 
@@ -75,5 +93,6 @@ public class Ogrenci extends Kisi {
 		System.out.println("###########################################################################################\n");	 
 		
 	}
+	
 
 }
